@@ -25,7 +25,8 @@ import {
 export const Assistant = () => {
   const runtime = useChatRuntime({
     transport: new AssistantChatTransport({
-      api: "/api/chat",
+      // Use the AI-SDK chatRoute exposed by the Mastra server
+      api: "http://localhost:4111/chat/weatherAgent",
     }),
   });
 
