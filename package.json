@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev:mastra\" \"next dev --turbopack\"",
+    "dev": "concurrently \"next dev --turbopack\"",
     "dev:mastra": "mastra dev",
     "dev:ui": "next dev",
     "build": "next build",
