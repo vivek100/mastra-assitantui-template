@@ -69,32 +69,31 @@ If your Mastra agents or tools require additional env vars (e.g. other providers
 
 ## Running in development
 
-To start **both** the Mastra server and the Next.js / Assistant UI dev server:
+### Default `npm run dev` (placeholder server for Freestyle)
+
+By default, the `dev` script runs a lightweight Node server:
 
 ```bash
 npm run dev
-# or
-pnpm dev
 ```
 
-This runs (see `package.json`):
+This executes `node server.js`, which serves a small HTML page on
+<http://localhost:3000> explaining how to start the real dev servers. This is
+useful in environments like Freestyle where the default Node 18 image might not
+support the full Next.js + Mastra dev stack yet, but the platform still expects
+`npm run dev` to succeed.
 
-- `npm run dev:mastra` → `mastra dev` (Mastra server on **http://localhost:4111**)
-- `next dev` or `next dev --turbopack` (Next.js dev on **http://localhost:3000**)
+### Real dev servers (Mastra + Next.js)
 
-Then open:
-
-- UI: <http://localhost:3000>
-- Mastra API (for debugging): <http://localhost:4111/api>
-
-You can start editing the UI by modifying files under `src/app/`. The page auto-updates as you edit.
-
-To run just one side:
+Locally, or after upgrading Node / npm in your sandbox, start the full stack with:
 
 ```bash
-npm run dev:mastra   # only Mastra server
-npm run dev:ui       # only Next.js / Assistant UI
+npm run dev:mastra   # Mastra server on http://localhost:4111
+npm run dev:ui       # Next.js + Assistant UI on http://localhost:3000
 ```
+
+You can run these in separate terminals. Once both are running, open
+<http://localhost:3000> to use the Assistant UI backed by Mastra.
 
 ---
 

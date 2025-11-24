@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "install": "pnpm install",
-    "dev": "next dev --turbopack",
+    "dev": "node server.js",
     "dev:mastra": "mastra dev",
     "dev:ui": "next dev",
     "build": "next build",
